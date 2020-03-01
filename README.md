@@ -15,12 +15,19 @@ Instagram Bot, like, follow and unfollow ... etc
 
 python install.py
 
+5- entre na pasta bot/ e retire o número do chrome de acordo com sua versão do Chrome
+ex:
+
+se você utiliza o Chrome na versão 80, altere o nome do chromedriver80.exe para chromedriver.exe
+
 # Como usar
 
 python grilobot.py -u USUÁRIO -p SENHA
 
 exemplo:
 python grilobot.py -u fellipmg -p password321
+
+altere as tags no arquivo grilobot.py
 
 # Video Tutorial instalação
 
