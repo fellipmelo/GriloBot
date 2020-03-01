@@ -15,7 +15,8 @@ Instagram Bot, like, follow and unfollow ... etc
 
 python install.py
 
-5- entre na pasta bot/ e retire o número do chrome de acordo com sua versão do Chrome
+5- entre na pasta bot/ e retire o número do chrome de acordo com sua versão
+
 ex:
 
 se você utiliza o Chrome na versão 80, altere o nome do chromedriver80.exe para chromedriver.exe
