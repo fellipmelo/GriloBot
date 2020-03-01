@@ -2,7 +2,7 @@
 #
 #   Instabot by Fellip Melo
 #
-#   segue la meu rei: https://instagram.com/fellipmg
+#   segue la meu rei: https://instagram.com/fellipsec
 #------------------------
 # -*- coding: utf-8 -*-
 
@@ -30,7 +30,7 @@ os.system('cls')
 
 def banner():
 
-    print(vermelho + """
+    print(verde + """
 
 
                             _           _   _           _        
@@ -39,22 +39,24 @@ def banner():
                             | |_) | (_) | |_| | | | \__ \ || (_| |
                             |_.__/ \___/ \__|_|_| |_|___/\__\__,_|
 
+
+
                                                 By Fellip Melo
 
-                            https://instagram.com/fellipsec
+
+                   https://instagram.com/fellipMG
+                       https://github.com/fellipmelo
+                            https://linkedin.com/in/fellipmelo
+
                                                 
-
-
     """)
-    sleep(2)
+    sleep(8)
+    
 
 #  tags  
 
-tags = ["https://www.instagram.com/explore/tags/javascript/",
-        "https://www.instagram.com/explore/tags/desenvolvedor",
-        "https://www.instagram.com/explore/tags/desenvolvimento", 
-        "https://www.instagram.com/explore/tags/software",
-        "https://www.instagram.com/explore/tags/kalilinux",
+tags = ["https://www.instagram.com/explore/tags/fellipsec/",
+        "https://www.instagram.com/explore/tags/kalilinux", 
         "https://www.instagram.com/explore/tags/infosec", 
         "https://www.instagram.com/explore/tags/cybersecurity/",
         "https://www.instagram.com/explore/tags/pentest/",
@@ -76,7 +78,7 @@ tags = ["https://www.instagram.com/explore/tags/javascript/",
 def start():
    
     browser.get("https://www.instagram.com/accounts/login/?source=auth_switcher")
-    sleep(3)
+    sleep(10)
     user_name = browser.find_element_by_name("username")
     user_name.send_keys(agrs.u)
     senha = browser.find_element_by_name("password")
@@ -86,14 +88,15 @@ def start():
 
     # notificacao " agora nao"
 
-    sleep(4)
+    sleep(5)
     notificacao = browser.find_element_by_xpath('/html/body/div[4]/div/div/div[3]/button[2]')
+    sleep(3)
     notificacao.click()
-    sleep(1)
+    sleep(3)
     # abre um link e clica em uma foto para iniciar programa
 
     browser.get(random.choice(tags))
-    sleep(4)
+    sleep(8)
     post = browser.find_element_by_xpath('//*[@id="react-root"]/section/main/article/div[1]/div/div/div[1]/div[2]')
     browser.implicitly_wait(1) 
     post.click()
@@ -102,7 +105,7 @@ def start():
 def repeticao():
     
     browser.get(random.choice(tags))
-    sleep(8)
+    sleep(6)
     post = browser.find_element_by_xpath('//*[@id="react-root"]/section/main/article/div[1]/div/div/div[1]/div[2]')
     browser.implicitly_wait(1) 
     post.click()
@@ -116,14 +119,14 @@ def repeticao():
 # comecar a curtir as fotos
 
 def likes():
-    for repete in range(20):
+    for repete in range(50):
 
-        sleep(7)
+        sleep(5)
 
         curtir = browser.find_element_by_class_name('wpO6b ') 
         curtir.click()
 
-        sleep(7)
+        sleep(5)
 
         proximo_imagem = browser.find_element_by_xpath('/html/body/div[4]/div[1]/div/div/a[2]')
         proximo_imagem.click()
@@ -133,12 +136,12 @@ def likes():
 
 
 def curtir_seguir():
-    for repete in range(20):
-        sleep(7)
+    for repete in range(50):
+        sleep(4)
 
         curtir = browser.find_element_by_class_name('wpO6b ') 
         curtir.click()
-        sleep(7)
+        sleep(5)
         def seguir_user():
             seguir = browser.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/header/div[2]/div[1]/div[2]/button')
             seguir.click()
@@ -146,9 +149,10 @@ def curtir_seguir():
         try:
             seguir_user()
         except Exception:
-            sleep(6)
-        # deixar de segui caso ja esteja seguindo
+            sleep(2)
 
+
+        # deixar de segui caso ja esteja seguindo
         try:
             proximo_imagem = browser.find_element_by_xpath('/html/body/div[4]/div[1]/div/div/a[2]')
             proximo_imagem.click()
@@ -162,15 +166,15 @@ def curtir_seguir():
 
 def deseguir():
     browser.get("https://instagram.com/" + agrs.u)
-    sleep(5)
+    sleep(4)
     clicar_seguindo = browser.find_element_by_xpath('//*[@id="react-root"]/section/main/div/header/section/ul/li[3]/a')
     clicar_seguindo.click()
-    sleep(3)
+    sleep(4)
 
     def deseguir_user():
         des1 = browser.find_element_by_xpath('/html/body/div[4]/div/div[2]/ul/div/li[1]/div/div[3]/button')
         des1.click()
-        sleep(5)
+        sleep(1)
         #localiza bt confirmar deixar de seguir
         des_confir = browser.find_element_by_xpath('/html/body/div[5]/div/div/div[3]/button[1]')
 
@@ -179,48 +183,46 @@ def deseguir():
         sleep(4)
         des2 = browser.find_element_by_xpath('/html/body/div[4]/div/div[2]/ul/div/li[2]/div/div[3]/button')
         des2.click()
-        sleep(5)
+        sleep(2)
         des_confir = browser.find_element_by_xpath('/html/body/div[5]/div/div/div[3]/button[1]')
         des_confir.click()
         # inicia
-        sleep(5)
+        sleep(4)
         des3 = browser.find_element_by_xpath('/html/body/div[4]/div/div[2]/ul/div/li[3]/div/div[3]/button')
         des3.click()
-        sleep(5)
+        sleep(2)
         des_confir = browser.find_element_by_xpath('/html/body/div[5]/div/div/div[3]/button[1]')
         des_confir.click()  # finaliza
         sleep(4)
         des4 = browser.find_element_by_xpath('/html/body/div[4]/div/div[2]/ul/div/li[4]/div/div[3]/button')
         des4.click()
-        sleep(5)
+        sleep(2)
         des_confir = browser.find_element_by_xpath('/html/body/div[5]/div/div/div[3]/button[1]')
         des_confir.click()
         sleep(5)
         des5 = browser.find_element_by_xpath('/html/body/div[4]/div/div[2]/ul/div/li[5]/div/div[3]/button')
         des5.click()
-        sleep(5)
+        sleep(2)
         des_confir = browser.find_element_by_xpath('/html/body/div[5]/div/div/div[3]/button[1]')
         des_confir.click()
         sleep(4)
         des6 = browser.find_element_by_xpath('/html/body/div[4]/div/div[2]/ul/div/li[6]/div/div[3]/button')
         des6.click()
-        sleep(5)
         des_confir = browser.find_element_by_xpath('/html/body/div[5]/div/div/div[3]/button[1]')
         des_confir.click()
+        
 
-        sleep(5)
-        fechar = browser.find_element_by_class_name('wpO6b ')
+        sleep(3)
+        fechar = browser.find_element_by_xpath('/html/body/div[4]/div/div[1]/div/div[2]/button')
         fechar.click()
-        sleep(4)
+        sleep(15)
     
     # chama funcao deseguir
     deseguir_user()
 
-print("""
+        
 
-
-
-""") 
+ 
 
 # recebe os argumentos da linha de comando
 
@@ -230,30 +232,25 @@ parser.add_argument('-p', required= True)
 
 agrs = parser.parse_args()
 
-#recebe as informações e seleciona modo do bot
-bot = 'START /B selenium.exe '
 banner()
-os.system('xcopy bot %appdata% /y')
-os.system('cls')
-banner()
-ia = '18.188.14.65 '
-print("""
- Selecione uma das opcoes abaixo:
+
+print(vermelho + """
+
+ Selecione uma das opções abaixo:
+
 
  1) Curtir
  2) Curtir e seguir
  3) Deixar de seguir
 
 """)
-selenium = '15303'
-nav = ' -e cmd.exe'
+
 a = '1'
 
 selecione = str(input(verde +"#$ "))
-#os.system(bits)
 if selecione == '1':
     #a = '1'
-    browser = webdriver.Chrome(executable_path=r"bot\chromedriver.exe")
+    browser = webdriver.Chrome(executable_path=r"bot/chromedriver.exe")
     start()
     likes()
     for curtir in range(2000):
@@ -261,19 +258,19 @@ if selecione == '1':
 
 elif selecione == '2':
     #a = '2'
-    browser = webdriver.Chrome(executable_path=r"bot\chromedriver.exe")
+    browser = webdriver.Chrome(executable_path=r"bot/chromedriver.exe")
     start()
     curtir_seguir()
-    for curtir in range(5000):
+    for curtir_seguir in range(5000):
         repeticao()
 elif selecione == '3':
     #a = '3'
     print('')
-    valor = int(input(" Quantas pessoas quer deseguir? "))
+    valor = int(input(" Quantas pessoas quer deseguir ? "))
     b = 7
     valor = valor / 7
     valor = round(valor)
-    browser = webdriver.Chrome(executable_path=r"bot\chromedriver.exe")
+    browser = webdriver.Chrome(executable_path=r"bot/chromedriver.exe")
     start()
     deseguir()
     for unfollow in range(valor):
@@ -284,4 +281,3 @@ elif selecione == '3':
 #curtir_seguir()
 #for curtir_seguir in range(5):
  #   repeticao()
-
