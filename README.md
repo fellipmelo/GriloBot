@@ -10,6 +10,7 @@ Instagram Bot, like, follow and unfollow ... etc
 3- Instale o arquivo Python3.8
 
 4- Execute no prompt de comando o instalador
+
 python install.py
 
 # Como usar
