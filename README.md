@@ -23,10 +23,13 @@ se você utiliza o Chrome na versão 80, altere o nome do chromedriver80.exe par
 
 # Como usar
 
-python grilobot.py -u USUÁRIO -p SENHA
+entre no arquivo grilobot.py, edite onde está DD entre as aspas coloque o usuário e CC dentro das aspas coloque a senha
 
-exemplo:
-python grilobot.py -u fellipmg -p password321
+curti_por_hastag() <-- essa é uma função
+
+na ultima linha coloque uma das funções, tem diversas, escolha e salve
+
+python grilobot.py 
 
 altere as tags no arquivo grilobot.py
 
