@@ -415,7 +415,7 @@ def deixar_de_seguir_usuarios_seguidos():
 
 start()
 while True:
-    curti_e_seguir_por_hastag()
+    coloque aqui a função
 
 #647
 
